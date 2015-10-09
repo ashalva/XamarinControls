@@ -10,14 +10,20 @@ namespace IOS.UIPageViewController
 
 		public UIPageViewControllerItem (int index)
 		{
-			this.Index = index;
+			this.ListIndex = index;
+			this.RealIndex = index;
 		}
 
 		#endregion
 
 		#region Properties
 
-		public int Index {
+		public int ListIndex {
+			get;
+			set;
+		}
+
+		public int RealIndex {
 			get;
 			set;
 		}
@@ -28,11 +34,25 @@ namespace IOS.UIPageViewController
 			get { return _isActive; }
 			set { 
 				if (value) {
+					// you can use this property set for any logic on item activation
 					_isActive = true;
-					_indexLabel.Text = String.Format ("{0}:{1}", "index", Index.ToString ());
+					_listIndexLabel.Text = String.Format ("{0}:{1}", "list-index", ListIndex);
+					_listIndexLabel.SizeToFit ();
+					_listIndexLabel.Frame = new CGRect ((_mainView.Frame.Width - _listIndexLabel.Frame.Width) / 2f,
+						(_mainView.Frame.Height - _listIndexLabel.Frame.Height) / 2f,
+						_listIndexLabel.Frame.Width,
+						_listIndexLabel.Frame.Height);
+
+					// setting real index for
+					_realIndexLabel.Text = String.Format ("{0}:{1}", "real-index", RealIndex);
+					_realIndexLabel.SizeToFit ();
+					_realIndexLabel.Frame = new CGRect ((_mainView.Frame.Width - _realIndexLabel.Frame.Width) / 2f,
+						_listIndexLabel.Frame.Bottom + 10f,
+						_realIndexLabel.Frame.Width,
+						_realIndexLabel.Frame.Height);
 				} else {
 					_isActive = false;
-					_indexLabel.Text = String.Empty;
+					_listIndexLabel.Text = String.Empty;
 				}
 			}
 		}
@@ -41,7 +61,9 @@ namespace IOS.UIPageViewController
 
 		#region UI
 
-		private UILabel _indexLabel;
+		private UILabel _listIndexLabel;
+		private UILabel _realIndexLabel;
+		private UIView _mainView;
 
 		#endregion
 
@@ -58,39 +80,47 @@ namespace IOS.UIPageViewController
 
 		#region Methods
 
-		private nfloat GetStatusBarHeight ()
-		{
-			nfloat statusBarInfoHeight = UIApplication.SharedApplication.StatusBarFrame.Height;			
-			if (statusBarInfoHeight < 20) {
-				statusBarInfoHeight = 20;
-			}
-			statusBarInfoHeight = 20;
-			return (statusBarInfoHeight + this.NavigationController.NavigationBar.Frame.Height);
-		}
-
 		private void InitUI ()
 		{
 			nfloat padding = 100f;
 			
-			UIView mainView = new UIView (new CGRect (padding / 2f, 
-				                  padding / 2f,
-				                  View.Frame.Width - padding, 
-				                  View.Frame.Height - padding * 2));
+			_mainView = new UIView (new CGRect (padding / 2f, 
+				padding / 2f,
+				View.Frame.Width - padding, 
+				View.Frame.Height - padding * 2));
 
-			var indexLabelHeight = 150f;
-			_indexLabel = new UILabel (new CGRect (20f, 
-				mainView.Frame.Height / 2 - indexLabelHeight / 2f,
-				mainView.Frame.Width,
-				indexLabelHeight));
-			mainView.BackgroundColor = UIColor.Gray;
-			mainView.Layer.BorderWidth = 5f;
-			mainView.Layer.BorderColor = UIColor.DarkGray.CGColor;
-			mainView.Layer.CornerRadius = 20f;
-			_indexLabel.TextColor = UIColor.Red;
-			_indexLabel.Font = UIFont.SystemFontOfSize (50);
-			mainView.AddSubview (_indexLabel);
+			_mainView.BackgroundColor = UIColor.Gray;
+			_mainView.Layer.BorderWidth = 5f;
+			_mainView.Layer.BorderColor = UIColor.DarkGray.CGColor;
+			_mainView.Layer.CornerRadius = 20f;
 
-			View.AddSubview (mainView);
+			_listIndexLabel = new UILabel ();
+			_listIndexLabel.TextColor = UIColor.Red;
+			_listIndexLabel.Font = UIFont.SystemFontOfSize (40);
+
+			_realIndexLabel = new UILabel ();
+			_realIndexLabel.TextColor = UIColor.Red;
+			_realIndexLabel.Font = UIFont.SystemFontOfSize (35);
+
+			UIButton skip = new UIButton (UIButtonType.System);
+			skip.SetTitle ("Skip Item", UIControlState.Normal);
+			skip.Frame = new CGRect (0, _mainView.Frame.Bottom - 100f, _mainView.Frame.Width, 40f);
+			skip.TouchUpInside += SkipTheItem;
+			skip.TintColor = UIColor.White;
+
+
+			_mainView.AddSubview (_realIndexLabel);
+			_mainView.AddSubview (_listIndexLabel);
+			_mainView.AddSubview (skip);
+
+			View.AddSubview (_mainView);
+		}
+
+		void SkipTheItem (object sender, EventArgs e)
+		{
+			if (ParentViewController != null) {
+				(ParentViewController as PageViewController).SkipTheAd (this.ListIndex);
+			}
 		}
 
 		#endregion

@@ -28,10 +28,10 @@ namespace IOS.UIPageViewController
 
 				OldPage = CurrentPage;
 
-				if (CurrentPage.Index == 0) {
+				if (CurrentPage.ListIndex == 0) {
 					return null;
 				} else {
-					return _pages [CurrentPage.Index - 1];
+					return _pages [CurrentPage.ListIndex - 1];
 				}
 			} else
 				return null;
@@ -42,18 +42,18 @@ namespace IOS.UIPageViewController
 			CurrentPage = referenceViewController as UIPageViewControllerItem;
 			if (CurrentPage != null) {
 
-				if (CurrentPage.Index != 0) {
+				if (CurrentPage.ListIndex != 0) {
 					if (OldPage != null)
 						OldPage.IsActive = false;
 					CurrentPage.IsActive = true;
 					OldPage = CurrentPage;
 				}
 
-				if (CurrentPage.Index == _pages.Count - 1) {
+				if (CurrentPage.ListIndex == _pages.Count - 1) {
 					return null;
 				}
 
-				return _pages [(CurrentPage.Index + 1)];
+				return _pages [(CurrentPage.ListIndex + 1)];
 			} else
 				return null;
 		}
