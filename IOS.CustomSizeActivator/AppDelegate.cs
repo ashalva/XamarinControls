@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 
-namespace CustomSizeActivator
+namespace IOS.CustomSizeActivator
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the
 	// User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
@@ -15,10 +15,14 @@ namespace CustomSizeActivator
 			set;
 		}
 
+		public UIActivityIndicatorView ActivityIndicator;
+
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
+			// create a new window instance based on the screen size
 			Window = new UIWindow (UIScreen.MainScreen.Bounds);
 
+			// If you have defined a root view controller, set it here:
 			Window.RootViewController = new MainViewController ();
 
 			// make the window visible

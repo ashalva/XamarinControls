@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace CustomSizeActivator
+namespace IOS.CustomSizeActivator
 {
 	public class Application
 	{

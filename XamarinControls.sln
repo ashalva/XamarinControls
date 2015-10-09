@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOS.Clock", "IOS.Clock\IOS.Clock.csproj", "{230E5901-B250-476E-895B-965376FF70AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomSizeActivator", "CustomSizeActivator\CustomSizeActivator.csproj", "{FE15C351-95BB-47DC-B291-84BBA8D68502}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOS.CustomSizeActivator", "IOS.CustomSizeActivator\IOS.CustomSizeActivator.csproj", "{37434B79-D9CE-4DA9-892D-77399B78F3A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,13 +21,13 @@ Global
 		{230E5901-B250-476E-895B-965376FF70AC}.Release|iPhone.Build.0 = Release|iPhone
 		{230E5901-B250-476E-895B-965376FF70AC}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{230E5901-B250-476E-895B-965376FF70AC}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{FE15C351-95BB-47DC-B291-84BBA8D68502}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{FE15C351-95BB-47DC-B291-84BBA8D68502}.Debug|iPhone.Build.0 = Debug|iPhone
-		{FE15C351-95BB-47DC-B291-84BBA8D68502}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{FE15C351-95BB-47DC-B291-84BBA8D68502}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{FE15C351-95BB-47DC-B291-84BBA8D68502}.Release|iPhone.ActiveCfg = Release|iPhone
-		{FE15C351-95BB-47DC-B291-84BBA8D68502}.Release|iPhone.Build.0 = Release|iPhone
-		{FE15C351-95BB-47DC-B291-84BBA8D68502}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{FE15C351-95BB-47DC-B291-84BBA8D68502}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{37434B79-D9CE-4DA9-892D-77399B78F3A5}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{37434B79-D9CE-4DA9-892D-77399B78F3A5}.Debug|iPhone.Build.0 = Debug|iPhone
+		{37434B79-D9CE-4DA9-892D-77399B78F3A5}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{37434B79-D9CE-4DA9-892D-77399B78F3A5}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{37434B79-D9CE-4DA9-892D-77399B78F3A5}.Release|iPhone.ActiveCfg = Release|iPhone
+		{37434B79-D9CE-4DA9-892D-77399B78F3A5}.Release|iPhone.Build.0 = Release|iPhone
+		{37434B79-D9CE-4DA9-892D-77399B78F3A5}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{37434B79-D9CE-4DA9-892D-77399B78F3A5}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 EndGlobal

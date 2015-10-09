@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>CustomSizeActivator</string>
+	<string>IOS.CustomSizeActivator</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.customsizeactivator</string>
+	<string>com.bb</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

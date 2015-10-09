@@ -4,11 +4,11 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{FE15C351-95BB-47DC-B291-84BBA8D68502}</ProjectGuid>
+    <ProjectGuid>{37434B79-D9CE-4DA9-892D-77399B78F3A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CustomSizeActivator</RootNamespace>
+    <RootNamespace>IOS.CustomSizeActivator</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>CustomSizeActivator</AssemblyName>
+    <AssemblyName>IOS.CustomSizeActivator</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,6 +80,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="MainViewController.cs" />
+    <Compile Include="DialogPlugin.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
