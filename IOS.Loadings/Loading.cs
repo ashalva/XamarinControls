@@ -1,12 +1,14 @@
 ﻿using System;
 using UIKit;
 using CoreGraphics;
+using CoreAnimation;
+using Foundation;
 
 namespace IOS.Loadings
 {
 	public class Loading
 	{
-		static nfloat _padding = 50f;
+		static nfloat _padding = 60f;
 
 		public static UIView ThreeDotLoading (CGRect frame)
 		{
@@ -164,6 +166,42 @@ namespace IOS.Loadings
 				}
 			);
 
+			return loadingView;
+		}
+
+		public static UIView SquareLoading (CGRect frame)
+		{
+			var loadingView = new UIView (new CGRect ((frame.Width - _padding) / 2f, _padding * 3.5, _padding, _padding));
+
+			var squareWidth = 10f;
+
+			var square = new UIView (new CGRect (0, (loadingView.Frame.Height - squareWidth) / 2f, squareWidth, squareWidth));
+			square.BackgroundColor = UIColor.Gray;
+			square.Layer.CornerRadius = 3f;
+
+			loadingView.AddSubview (square);
+
+			UIView.Animate (0.8, 0, UIViewAnimationOptions.CurveEaseInOut | UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat,
+				() => {
+					CABasicAnimation rotationAnimation;
+					rotationAnimation = CABasicAnimation.FromKeyPath ("transform.rotation.z");
+					rotationAnimation.To = new NSNumber (Math.PI * 2);
+					rotationAnimation.Duration = 1.5;
+					rotationAnimation.Cumulative = true;
+					rotationAnimation.RepeatCount = int.MaxValue;
+					square.Layer.AddAnimation (rotationAnimation, "rotationAnimation");
+
+					square.Center = new CGPoint (
+						50f,
+						square.Frame.Y
+					);
+				},
+				() => {
+					square.Center = new CGPoint (
+						square.Frame.X,
+						square.Frame.Y
+					);
+				});
 			return loadingView;
 		}
 	}

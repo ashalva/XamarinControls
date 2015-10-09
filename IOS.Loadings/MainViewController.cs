@@ -20,6 +20,8 @@ namespace IOS.Loadings
 			View.AddSubview (Loading.ThreeDotLoading (View.Frame));
 			//two dotted loading
 			View.AddSubview (Loading.TwoDotLoading (View.Frame));
+			//
+			View.AddSubview (Loading.SquareLoading (View.Frame));
 		}
 	}
 }
