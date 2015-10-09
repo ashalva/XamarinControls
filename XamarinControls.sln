@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOS.CustomSizeActivator", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOS.UIPageViewController", "IOS.UIPageViewController\IOS.UIPageViewController.csproj", "{EAFAA71A-DD87-436F-9EF0-ECE072C9A574}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOS.Loadings", "IOS.Loadings\IOS.Loadings.csproj", "{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -39,5 +41,13 @@ Global
 		{EAFAA71A-DD87-436F-9EF0-ECE072C9A574}.Release|iPhone.Build.0 = Release|iPhone
 		{EAFAA71A-DD87-436F-9EF0-ECE072C9A574}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{EAFAA71A-DD87-436F-9EF0-ECE072C9A574}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}.Debug|iPhone.Build.0 = Debug|iPhone
+		{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}.Release|iPhone.ActiveCfg = Release|iPhone
+		{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}.Release|iPhone.Build.0 = Release|iPhone
+		{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{FA9B97BC-C7E0-443E-8B1C-79AC155BC056}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 EndGlobal
