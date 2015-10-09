@@ -82,6 +82,7 @@
     <Compile Include="MainViewController.cs" />
     <Compile Include="PageViewController.cs" />
     <Compile Include="UIPageViewControllerItem.cs" />
+    <Compile Include="PageDataSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

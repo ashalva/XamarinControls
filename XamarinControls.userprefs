@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="IOS.UIPageViewController/IOS.UIPageViewController.csproj">
+﻿<Properties StartupItem="IOS.UIPageViewController/IOS.UIPageViewController.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5s.8.4" />
   <MonoDevelop.Ide.Workbench ActiveDocument="IOS.CustomSizeActivator/AppDelegate.cs">
     <Files>

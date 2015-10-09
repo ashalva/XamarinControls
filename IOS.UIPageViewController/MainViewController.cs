@@ -25,7 +25,10 @@ namespace IOS.UIPageViewController
 		void StartUIPageViewController (object sender, EventArgs e)
 		{
 			InvokeOnMainThread (() => {
-				NavigationController.PushViewController (new PageViewController (), true);
+				NavigationController.PushViewController (new PageViewController (
+					UIPageViewControllerTransitionStyle.Scroll,
+					UIPageViewControllerNavigationOrientation.Horizontal,
+					UIPageViewControllerSpineLocation.Min), true);
 			});
 		}
 	}
