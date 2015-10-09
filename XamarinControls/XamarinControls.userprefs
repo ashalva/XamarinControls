@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="IOS.Clock/IOS.Clock.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5s.8.4" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IOS.Clock/AppDelegate.cs">
+    <Files>
+      <File FileName="IOS.Clock/AppDelegate.cs" Line="12" Column="3" />
+      <File FileName="IOS.Clock/MainViewController.cs" Line="8" Column="1" />
+      <File FileName="IOS.Clock/ColorExtensions.cs" Line="4" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
