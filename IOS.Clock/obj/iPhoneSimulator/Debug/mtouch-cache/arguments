@@ -1,10 +1,10 @@
 # Version: 9.0.1.20 (xcode7-c5: d8e9592)
-# [first argument, ignore] # /Volumes/D/Projects/CustomControls/XamarinControls/IOS.Clock/mtouch.exe
+# [first argument, ignore] # /Volumes/D/Projects/CustomControls/IOS.Clock/mtouch.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/9.0.1.20/bin/mtouch \
 	--cache \
-	/Volumes/D/Projects/CustomControls/XamarinControls/IOS.Clock/obj/iPhoneSimulator/Debug/mtouch-cache \
+	/Volumes/D/Projects/CustomControls/IOS.Clock/obj/iPhoneSimulator/Debug/mtouch-cache \
 	--sim \
-	/Volumes/D/Projects/CustomControls/XamarinControls/IOS.Clock/bin/iPhoneSimulator/Debug/IOS.Clock.app \
+	/Volumes/D/Projects/CustomControls/IOS.Clock/bin/iPhoneSimulator/Debug/IOS.Clock.app \
 	--executable \
 	IOS.Clock \
 	--debug \
@@ -18,7 +18,7 @@
 	8.4 \
 	--abi=i386 \
 	--symbollist \
-	/Volumes/D/Projects/CustomControls/XamarinControls/IOS.Clock/obj/iPhoneSimulator/Debug/mtouch-symbols.list \
+	/Volumes/D/Projects/CustomControls/IOS.Clock/obj/iPhoneSimulator/Debug/mtouch-symbols.list \
 	--dsym=no \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
@@ -32,4 +32,4 @@
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	--target-framework \
 	"Xamarin.iOS,v1.0" \
-	/Volumes/D/Projects/CustomControls/XamarinControls/IOS.Clock/bin/iPhoneSimulator/Debug//IOS.Clock.exe \
+	/Volumes/D/Projects/CustomControls/IOS.Clock/bin/iPhoneSimulator/Debug//IOS.Clock.exe \
