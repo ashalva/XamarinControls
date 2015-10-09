@@ -108,7 +108,6 @@ namespace IOS.UIPageViewController
 			skip.TouchUpInside += SkipTheItem;
 			skip.TintColor = UIColor.White;
 
-
 			_mainView.AddSubview (_realIndexLabel);
 			_mainView.AddSubview (_listIndexLabel);
 			_mainView.AddSubview (skip);
