@@ -1,8 +1,10 @@
 ﻿<Properties StartupItem="IOS.UIPageViewController/IOS.UIPageViewController.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5s.8.4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IOS.CustomSizeActivator/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IOS.UIPageViewController/UIPageViewControllerItem.cs">
     <Files>
-      <File FileName="IOS.CustomSizeActivator/AppDelegate.cs" Line="22" Column="45" />
+      <File FileName="IOS.UIPageViewController/PageViewController.cs" Line="26" Column="3" />
+      <File FileName="IOS.UIPageViewController/UIPageViewControllerItem.cs" Line="109" Column="30" />
+      <File FileName="IOS.UIPageViewController/PageDataSource.cs" Line="56" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
