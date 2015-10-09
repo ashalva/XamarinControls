@@ -36,6 +36,7 @@ namespace IOS.UIPageViewController
 				pages.Add (new UIPageViewControllerItem (i));
 			}
 
+			//setting datasource
 			this.DataSource = new PageDataSource (pages);
 			SetViewControllers (new UIViewController[] { pages [0] }, UIPageViewControllerNavigationDirection.Forward, false, s => {
 			});
@@ -48,6 +49,7 @@ namespace IOS.UIPageViewController
 
 		public void SkipTheAd (int index)
 		{	
+			//choose which controller should be the next
 			UIPageViewControllerItem controller = null;
 			int nextIndex;
 			if (pages.Count > 1) {
@@ -58,17 +60,21 @@ namespace IOS.UIPageViewController
 				}
 			}
 
+			//removing current page
 			pages.RemoveAt (index);
 
+			//changing indexes for navigation
 			for (int i = 0; i < pages.Count; i++)
 				pages [i].ListIndex = i;
 
+			//if the page was last set empy view controller
 			if (pages.Count == 0) {
 				SetViewControllers (new UIViewController[] { new UIViewController () }, UIPageViewControllerNavigationDirection.Forward, true, s => {
 				});
 				return;
 			}
 
+			//setting next view controller
 			SetViewControllers (new UIViewController[] { controller }, UIPageViewControllerNavigationDirection.Forward, true, s => {
 			});
 			controller.IsActive = true;
