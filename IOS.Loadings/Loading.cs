@@ -10,11 +10,10 @@ namespace IOS.Loadings
 
 		public static UIView ThreeDotLoading (CGRect frame)
 		{
-			
 			var loadingView = new UIView (new CGRect ((frame.Width - _padding) / 2f, _padding, _padding, _padding));
 
-			var dotDiameter = 10f;
-			var padding = 4f;
+			var dotDiameter = 8f;
+			var padding = 3f;
 
 			UIView middleDot = new UIView (new CGRect (
 				                   (loadingView.Frame.Width - dotDiameter) / 2f,
