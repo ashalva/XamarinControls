@@ -17,6 +17,7 @@ namespace IOS.Loadings
 		private void InitUI ()
 		{
 			View.AddSubview (Loading.ThreeDotLoading (View.Frame));
+			View.AddSubview (Loading.TwoDotLoading (View.Frame));
 		}
 	}
 }

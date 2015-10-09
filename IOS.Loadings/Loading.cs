@@ -6,7 +6,7 @@ namespace IOS.Loadings
 {
 	public class Loading
 	{
-		nfloat _padding = 50f;
+		static nfloat _padding = 50f;
 
 		public static UIView ThreeDotLoading (CGRect frame)
 		{
@@ -99,7 +99,74 @@ namespace IOS.Loadings
 			);
 			return loadingView;
 		}
-		
+
+		public static UIView TwoDotLoading (CGRect frame)
+		{
+			var dotDiameter = 2f;
+
+			var loadingView = new UIView (new CGRect ((frame.Width - _padding) / 2f, _padding * 2, _padding, _padding));
+
+			UIView firstDot = new UIView (new CGRect (
+				                  (loadingView.Frame.Width - dotDiameter) / 2f + 7.5f,
+				                  (loadingView.Frame.Height - dotDiameter) / 2f,
+				                  dotDiameter,
+				                  dotDiameter
+			                  ));
+			firstDot.Layer.CornerRadius = dotDiameter / 2f;
+			firstDot.BackgroundColor = UIColor.Gray;
+
+
+			UIView secondDot = new UIView (new CGRect (
+				                   (loadingView.Frame.Width - dotDiameter) / 2f - 7.5f,
+				                   (loadingView.Frame.Height - dotDiameter) / 2f,
+				                   dotDiameter,
+				                   dotDiameter
+			                   ));
+			secondDot.Layer.CornerRadius = dotDiameter / 2f;
+			secondDot.BackgroundColor = UIColor.Gray; 
+
+			loadingView.AddSubviews (firstDot, secondDot);
+
+
+			var firstDotCenter = firstDot.Center;
+			var secondDotCenter = secondDot.Center;
+			UIView.Animate (0.8, 0.4, UIViewAnimationOptions.CurveEaseInOut | UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat,
+				() => {
+					firstDot.Center =
+						new CGPoint (
+						secondDotCenter.X,
+						secondDotCenter.Y + 20f
+					);
+					firstDot.Transform = CGAffineTransform.MakeScale (5f, 5f);
+				},
+				() => {
+					firstDot.Center =
+						new CGPoint (
+						firstDotCenter.X,
+						firstDotCenter.Y
+					);
+				}
+			);
+			UIView.Animate (0.8, 0, UIViewAnimationOptions.CurveEaseInOut | UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat,
+				() => {
+					secondDot.Center =
+						new CGPoint (
+						firstDotCenter.X,
+						firstDotCenter.Y + 20f
+					);
+					secondDot.Transform = CGAffineTransform.MakeScale (5f, 5f);
+				},
+				() => {
+					secondDot.Center =
+						new CGPoint (
+						secondDotCenter.X,
+						secondDotCenter.Y
+					);
+				}
+			);
+
+			return loadingView;
+		}
 	}
 }
 
