@@ -24,6 +24,18 @@ namespace IOS.CustomSizeActivator
 			app.ActivityIndicator.StartAnimating ();
 			UIApplication.SharedApplication.NetworkActivityIndicatorVisible = true;
 		}
+
+		public static void DismissProgressDialog ()
+		{
+			AppDelegate app = UIApplication.SharedApplication.Delegate as AppDelegate;
+			if (app.ActivityIndicator != null) {
+				app.ActivityIndicator.StopAnimating ();
+				app.ActivityIndicator.RemoveFromSuperview ();
+				app.ActivityIndicator.Dispose ();
+				app.ActivityIndicator = null;
+				UIApplication.SharedApplication.NetworkActivityIndicatorVisible = false;
+			}
+		}
 	}
 }
 
