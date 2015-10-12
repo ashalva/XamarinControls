@@ -16,12 +16,14 @@ namespace IOS.Loadings
 
 		private void InitUI ()
 		{
-			//three dotted loading
+			//Three dotted loading with moving effect
 			View.AddSubview (Loading.ThreeDotLoading (View.Frame));
-			//two dotted loading
+			//Two dotted loading
 			View.AddSubview (Loading.TwoDotLoading (View.Frame));
-			//
+			//Square Loading
 			View.AddSubview (Loading.SquareLoading (View.Frame));
+			//Three dotted loading with zoom effect
+			View.AddSubview (Loading.ThreeDotLoadingZooming (View.Frame));
 		}
 	}
 }

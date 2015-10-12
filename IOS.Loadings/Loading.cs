@@ -205,7 +205,59 @@ namespace IOS.Loadings
 			return loadingView;
 		}
 
+		public static UIView ThreeDotLoadingZooming (CGRect frame)
+		{
+			var loadingView = new UIView (new CGRect ((frame.Width - _padding) / 2f, _padding * 4.5, _padding, _padding));
+			var dotDiameter = 6f;
+			var padding = 5.5f;
 
+			UIView middleDot = new UIView (new CGRect (
+				                   (loadingView.Frame.Width - dotDiameter) / 2f,
+				                   (loadingView.Frame.Height - dotDiameter) / 2f,
+				                   dotDiameter,
+				                   dotDiameter
+			                   ));
+			middleDot.Layer.CornerRadius = dotDiameter / 2f;
+			middleDot.BackgroundColor = UIColor.Gray;
+
+			UIView leftDot = new UIView (
+				                 new CGRect (
+					                 middleDot.Frame.Left - dotDiameter - padding,
+					                 middleDot.Frame.Y,
+					                 dotDiameter,
+					                 dotDiameter
+				                 ));
+			leftDot.Layer.CornerRadius = dotDiameter / 2f;
+			leftDot.BackgroundColor = UIColor.Gray;
+
+			UIView rightDot = new UIView (
+				                  new CGRect (
+					                  middleDot.Frame.Right + padding,
+					                  middleDot.Frame.Y,
+					                  dotDiameter,
+					                  dotDiameter
+				                  ));
+			rightDot.Layer.CornerRadius = dotDiameter / 2f;
+			rightDot.BackgroundColor = UIColor.Gray;
+
+			loadingView.AddSubviews (middleDot, leftDot, rightDot);
+			leftDot.Alpha = 0.5f;
+			middleDot.Alpha = 0.5f;
+			rightDot.Alpha = 0.5f;
+			UIView.Animate (0.6, 0, UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, () => {
+				leftDot.Transform = CGAffineTransform.MakeScale (1.8f, 1.8f);
+				leftDot.Alpha = 1f;
+			}, null);
+			UIView.Animate (0.6, 0.2, UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, () => {
+				middleDot.Transform = CGAffineTransform.MakeScale (1.8f, 1.8f);
+				middleDot.Alpha = 1f;
+			}, null);
+			UIView.Animate (0.6, 0.4, UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, () => {
+				rightDot.Transform = CGAffineTransform.MakeScale (1.8f, 1.8f);
+				rightDot.Alpha = 1f;
+			}, null);
+			return loadingView;	
+		}
 	}
 }
 
