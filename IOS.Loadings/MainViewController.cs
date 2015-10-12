@@ -24,6 +24,8 @@ namespace IOS.Loadings
 			View.AddSubview (Loading.SquareLoading (View.Frame));
 			//Three dotted loading with zoom effect
 			View.AddSubview (Loading.ThreeDotLoadingZooming (View.Frame));
+			// Multiple Lines loading
+			View.AddSubview (Loading.MultipleLinesLoading (View.Frame));
 		}
 	}
 }

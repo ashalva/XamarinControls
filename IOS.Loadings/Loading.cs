@@ -3,6 +3,7 @@ using UIKit;
 using CoreGraphics;
 using CoreAnimation;
 using Foundation;
+using System.Collections.Generic;
 
 namespace IOS.Loadings
 {
@@ -244,6 +245,7 @@ namespace IOS.Loadings
 			leftDot.Alpha = 0.5f;
 			middleDot.Alpha = 0.5f;
 			rightDot.Alpha = 0.5f;
+
 			UIView.Animate (0.6, 0, UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, () => {
 				leftDot.Transform = CGAffineTransform.MakeScale (1.8f, 1.8f);
 				leftDot.Alpha = 1f;
@@ -257,6 +259,83 @@ namespace IOS.Loadings
 				rightDot.Alpha = 1f;
 			}, null);
 			return loadingView;	
+		}
+
+		public static UIView MultipleLinesLoading (CGRect frame)
+		{
+			//creating mainView
+			var loadingView = new UIView (new CGRect ((frame.Width - _padding) / 2f, _padding * 5.5, _padding + 20f, _padding + 20f));
+			var lineWidth = 5f;
+			var lineHeight = _padding + 16f;
+
+			List<UIView> viewsList = new List<UIView> ();
+
+			//creating middle line
+			var middleLine = new UIView (new CGRect (
+				                 (loadingView.Frame.Width - lineWidth) / 2f,
+				                 8f,
+				                 lineWidth,
+				                 lineHeight));
+			middleLine.Layer.CornerRadius = lineWidth / 2f;
+			middleLine.BackgroundColor = UIColor.Gray;
+			viewsList.Add (middleLine);
+			loadingView.AddSubview (middleLine);
+
+			// line properties
+			var linePadding = 3f;
+			int lineCount = 15;
+			var random = new Random ();
+
+			//creating left and right lines
+			for (int i = 0; i < lineCount; i++) {
+				//generating random color
+				var color = String.Format ("#{0:X6}", random.Next (0x1000000));
+
+				var view = new UIView ();
+				view.Layer.CornerRadius = lineWidth / 2f;
+				if (i < lineCount - 1) {
+					if (i % 2 == 0) {
+						// choose right X position of next Line
+						int k = i;
+						if (i > 0)
+							k--;
+						view.Frame = new CGRect (viewsList [k].Frame.X - linePadding - lineWidth,
+							8f,
+							lineWidth,
+							lineHeight);
+					} else {
+						view.Frame = new CGRect (viewsList [i - 1].Frame.X + linePadding + lineWidth,
+							8f,
+							lineWidth,
+							lineHeight);
+					}
+				}
+
+				// add random color for each line
+				view.BackgroundColor = UIColor.Clear.FromHexString (color);
+				viewsList.Add (view);
+				loadingView.AddSubview (view);
+
+				if (i % 2 == 0)
+					UIView.Animate (1.2, i * 0.12, UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, () => {
+						if (i == 0) {
+							// animate middleElement
+							viewsList [i].Transform = CGAffineTransform.MakeScale (1f, 0.1f);
+							viewsList [i].Alpha = 0.3f;
+							viewsList [i].Layer.CornerRadius = 2f;
+						} else {
+							//animate next elements
+							viewsList [i].Transform = CGAffineTransform.MakeScale (1f, 0.1f);
+							viewsList [i].Alpha = 0.3f;
+							viewsList [i].Layer.CornerRadius = 2f;
+							viewsList [i - 1].Transform = CGAffineTransform.MakeScale (1f, 0.1f);
+							viewsList [i - 1].Layer.CornerRadius = 2f;
+							viewsList [i - 1].Alpha = 0.3f;
+						}
+					}, null);
+			}
+
+			return loadingView;
 		}
 	}
 }
