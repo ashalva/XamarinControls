@@ -204,6 +204,8 @@ namespace IOS.Loadings
 				});
 			return loadingView;
 		}
+
+
 	}
 }
 

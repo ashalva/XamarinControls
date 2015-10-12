@@ -1,10 +1,9 @@
 ﻿<Properties StartupItem="IOS.Loadings/IOS.Loadings.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5s.8.4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IOS.UIPageViewController/UIPageViewControllerItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IOS.Loadings/Loading.cs">
     <Files>
-      <File FileName="IOS.UIPageViewController/PageViewController.cs" Line="26" Column="3" />
-      <File FileName="IOS.UIPageViewController/UIPageViewControllerItem.cs" Line="109" Column="30" />
-      <File FileName="IOS.UIPageViewController/PageDataSource.cs" Line="56" Column="42" />
+      <File FileName="IOS.Loadings/MainViewController.cs" Line="23" Column="6" />
+      <File FileName="IOS.Loadings/Loading.cs" Line="146" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
