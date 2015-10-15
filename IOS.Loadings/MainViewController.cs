@@ -26,6 +26,8 @@ namespace IOS.Loadings
 			View.AddSubview (Loading.ThreeDotLoadingZooming (View.Frame));
 			// Multiple Lines loading
 			View.AddSubview (Loading.MultipleLinesLoading (View.Frame));
+			// Cicle Loading
+			View.AddSubview (Loading.CircleLoading (View.Frame));
 		}
 	}
 }

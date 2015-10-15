@@ -4,6 +4,7 @@ using CoreGraphics;
 using CoreAnimation;
 using Foundation;
 using System.Collections.Generic;
+using CoreImage;
 
 namespace IOS.Loadings
 {
@@ -312,7 +313,8 @@ namespace IOS.Loadings
 				}
 
 				// add random color for each line
-				view.BackgroundColor = UIColor.Clear.FromHexString (color);
+				//view.BackgroundColor = UIColor.Clear.FromHexString (color);
+				view.BackgroundColor = UIColor.Gray;
 				viewsList.Add (view);
 				loadingView.AddSubview (view);
 
@@ -334,6 +336,22 @@ namespace IOS.Loadings
 						}
 					}, null);
 			}
+
+			return loadingView;
+		}
+
+		public static UIView CircleLoading (CGRect frame)
+		{
+			var loadingView = new UIView (new CGRect ((frame.Width - _padding) / 2f, _padding * 6.5, _padding + 20f, _padding + 20f));
+
+			var circleDiameter = 20f;
+			var mainCircle = new UIView (new CGRect ((loadingView.Frame.Width - circleDiameter) / 2f,
+				                 (loadingView.Frame.Height - circleDiameter) / 2f,
+				                 circleDiameter, 
+				                 circleDiameter));
+			mainCircle.BackgroundColor = UIColor.Gray;
+
+			loadingView.AddSubview (mainCircle);
 
 			return loadingView;
 		}
